@@ -155,7 +155,7 @@ namespace UnityEngine.Rendering
             Register(volume, newLayer);
         }
 
-        // Go through all listed components and lerp overriden values in the global state
+        // Go through all listed components and lerp overridden values in the global state
         void OverrideData(VolumeStack stack, List<VolumeComponent> components, float interpFactor)
         {
             foreach (var component in components)
