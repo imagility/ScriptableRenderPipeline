@@ -31,7 +31,7 @@ namespace UnityEngine.Experimental.Rendering.HDPipeline
             public static Settings defaultSettings => new Settings
             {
                 bounds = new Rect(0f, 0f, 1f, 1f),
-                padding = new RectOffset(10, 10, 10, 10),
+                padding = new RectOffset(0, 0, 0, 0),
                 selectionColor = Color.yellow,
                 curvePickingDistance = 6f,
                 keyTimeClampingDistance = 1e-4f
