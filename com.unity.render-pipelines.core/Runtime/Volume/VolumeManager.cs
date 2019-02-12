@@ -10,13 +10,8 @@ namespace UnityEngine.Rendering
 
     public sealed class VolumeManager
     {
-        //>>> System.Lazy<T> is broken in Unity (legacy runtime) so we'll have to do it ourselves :|
-        static readonly VolumeManager s_Instance = new VolumeManager();
-        public static VolumeManager instance { get { return s_Instance; } }
-
-        // Explicit static constructor to tell the C# compiler not to mark type as beforefieldinit
-        static VolumeManager() {}
-        //<<<
+        static readonly Lazy<VolumeManager> s_Instance = new Lazy<VolumeManager>(() => new VolumeManager());
+        public static VolumeManager instance => s_Instance.Value;
 
         // Internal stack
         public VolumeStack stack { get; private set; }
