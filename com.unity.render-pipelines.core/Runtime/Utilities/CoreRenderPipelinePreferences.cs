@@ -4,6 +4,10 @@ namespace UnityEngine.Rendering
     // places like OnGizmo etc and we don't want to add the editor assembly as a dependency of the
     // runtime one
 
+    // The UI layout/styling in this panel is broken and can't match the one from built-ins
+    // preference panels as everything needed is internal/private (at the time of writing this
+    // comment)
+
 #if UNITY_EDITOR
     using UnityEditor;
 
@@ -37,8 +41,6 @@ namespace UnityEngine.Rendering
                 {
                     if (!m_Loaded)
                         Load();
-
-                    EditorGUILayout.Space();
 
                     volumeGizmoColor = EditorGUILayout.ColorField("Volume Gizmo Color", volumeGizmoColor);
                 }
